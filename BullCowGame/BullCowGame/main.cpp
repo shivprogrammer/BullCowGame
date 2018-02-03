@@ -19,13 +19,6 @@ int main() {
 	// repeat the guess back to them
 	cout << "Your guess was: " << Guess << endl;
 
-	// get a guess from the player
-	cout << "Enter your guess: ";
-	cin >> Guess;
-
-	// repeat the guess back to them
-	cout << "Your guess was: " << Guess << endl;
-
 	cout << endl;
 	return 0;
 }
