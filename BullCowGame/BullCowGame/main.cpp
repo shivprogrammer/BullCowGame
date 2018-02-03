@@ -10,12 +10,12 @@ string GetGuessAndPrintBack();
 int main() {
 	PrintIntro();
 
-	for (int count = 5; count > 0; count--) {
+	constexpr int GUESSES_REMAINING = 5;
+	for (int count = GUESSES_REMAINING; count > 0; count--) {
 		GetGuessAndPrintBack();
 		cout << endl;
 	}
 
-	cout << endl;
 	return 0;
 }
 
@@ -29,8 +29,8 @@ void PrintIntro() {
 	return;
 }
 
-// get a guess from the player
 string GetGuessAndPrintBack() {
+	// get a guess from the player
 	cout << "Enter your guess: ";
 	string Guess = "";
 	getline(cin, Guess);
