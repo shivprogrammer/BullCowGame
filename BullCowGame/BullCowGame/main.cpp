@@ -8,11 +8,13 @@ void PlayGame();
 string Guess = "";
 string GetGuess();
 void RelayGuess();
+bool AskToPlayAgain();
 
 // the entry point for our application
 int main() {
 	PrintIntro();
 	PlayGame();
+	AskToPlayAgain();
 	return 0;
 }
 
@@ -35,7 +37,7 @@ void PrintIntro() {
 }
 
 string GetGuess() {
-	// get a guess from the player
+	// get guess from player
 	cout << "Enter your guess: ";
 	getline(cin, Guess);
 
@@ -44,7 +46,19 @@ string GetGuess() {
 }
 
 void RelayGuess() {
-	// print the guess back to them
+	// print guess to player
 	cout << "Your guess was: " << Guess << endl;
 	return;
+}
+
+bool AskToPlayAgain() {
+	cout << "Do you want to play again? ";
+	string Response = "";
+	getline(cin, Response);
+
+	if (Response[0] == 'y') {
+		PlayGame();
+	}
+
+	return false;
 }
