@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "FBullCowGame.h"
 
 void PrintIntro();
 void PlayGame();
@@ -22,6 +23,8 @@ int main() {
 }
 
 void PlayGame() {
+	FBullCowGame BCGame;
+
 	constexpr int GUESSES_REMAINING = 5;
 	for (int count = GUESSES_REMAINING; count > 0; count--) {
 		GetGuess();
@@ -43,7 +46,6 @@ std::string GetGuess() {
 	// get guess from player
 	std::cout << "Enter your guess: ";
 	std::getline(std::cin, Guess);
-
 	RelayGuess();
 	return Guess;
 }

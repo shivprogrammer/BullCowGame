@@ -1,3 +1,6 @@
 ﻿  main.cpp
+c:\users\shivu\zen\bullcowgame\bullcowgame\bullcowgame\main.cpp(26): warning C4101: 'BCGame': unreferenced local variable
+  FBullCowGame.cpp
+  Generating Code...
   BullCowGame.vcxproj -> C:\Users\shivu\zen\BullCowGame\BullCowGame\Debug\BullCowGame.exe
   BullCowGame.vcxproj -> C:\Users\shivu\zen\BullCowGame\BullCowGame\Debug\BullCowGame.pdb (Full PDB)
