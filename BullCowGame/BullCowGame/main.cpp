@@ -10,8 +10,10 @@ string GetGuessAndPrintBack();
 int main() {
 	PrintIntro();
 
-	GetGuessAndPrintBack();
-	GetGuessAndPrintBack();
+	for (int count = 5; count > 0; count--) {
+		GetGuessAndPrintBack();
+		cout << endl;
+	}
 
 	cout << endl;
 	return 0;
