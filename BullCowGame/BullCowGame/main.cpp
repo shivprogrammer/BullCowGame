@@ -56,7 +56,7 @@ bool AskToPlayAgain() {
 	string Response = "";
 	getline(cin, Response);
 
-	if (Response[0] == 'y') {
+	if (Response[0] == 'y' || Response[0] == 'Y') {
 		PlayGame();
 	}
 
