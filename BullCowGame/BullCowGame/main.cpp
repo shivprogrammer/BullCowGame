@@ -46,12 +46,12 @@ void PrintIntro() {
 }
 
 std::string GetGuess() {
-	// get guess from player
 	int CurrentTry = BCGame.GetCurrentTry();
-	std::cout << CurrentTry << std::endl;
 
-	std::cout << "Enter your guess: ";
+	// get guess from player
+	std::cout << "Try " << CurrentTry << ". Enter your guess: ";
 	std::getline(std::cin, Guess);
+
 	RelayGuess();
 
 	return Guess;
