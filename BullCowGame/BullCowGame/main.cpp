@@ -4,9 +4,7 @@
 
 void PrintIntro();
 void PlayGame();
-std::string Guess = "";
 std::string GetGuess();
-void RelayGuess();
 bool AskToPlayAgain();
 
 FBullCowGame BCGame;
@@ -49,18 +47,13 @@ std::string GetGuess() {
 	int CurrentTry = BCGame.GetCurrentTry();
 
 	// get guess from player
+	std::string Guess = "";
 	std::cout << "Try " << CurrentTry << ". Enter your guess: ";
 	std::getline(std::cin, Guess);
 
-	RelayGuess();
+	std::cout << "Your guess was: " << Guess << std::endl;
 
 	return Guess;
-}
-
-void RelayGuess() {
-	// print guess to player
-	std::cout << "Your guess was: " << Guess << std::endl;
-	return;
 }
 
 bool AskToPlayAgain() {
