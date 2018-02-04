@@ -1,10 +1,18 @@
+/*
+This is the console executable that makes use of the BullCow class
+This acts as the view in a MCV pattern, and is responsible
+for all user interaction. For game logic see the FBullCowGame class.
+*/
+
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
 
+using FText = std::string;
+
 void PrintIntro();
 void PlayGame();
-std::string GetGuess();
+FText GetGuess();
 bool AskToPlayAgain();
 
 FBullCowGame BCGame; // instantiating a new game
@@ -50,11 +58,11 @@ void PlayGame() {
 	// TODO add a game summary
 }
 
-std::string GetGuess() {
+FText GetGuess() {
 	int CurrentTry = BCGame.GetCurrentTry();
 
 	// get guess from player
-	std::string Guess = "";
+	FText Guess = "";
 	std::cout << "Try " << CurrentTry << ". Enter your guess: ";
 	std::getline(std::cin, Guess);
 	std::cout << "Your guess was: " << Guess << std::endl;
@@ -65,7 +73,7 @@ std::string GetGuess() {
 
 bool AskToPlayAgain() {
 	std::cout << "Do you want to play again? (y/n) ";
-	std::string Response = "";
+	FText Response = "";
 	std::getline(std::cin, Response);
 	return (Response[0] == 'y' || Response[0] == 'Y');
 }
