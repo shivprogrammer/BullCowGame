@@ -7,10 +7,12 @@ void PlayGame();
 std::string GetGuess();
 bool AskToPlayAgain();
 
-FBullCowGame BCGame;
+FBullCowGame BCGame; // instantiating a new game
 
 // the entry point for our application
 int main() {
+	std::cout << BCGame.GetCurrentTry();
+
 	bool bPlayAgain = false;
 	do {
 		PrintIntro();
@@ -23,8 +25,8 @@ int main() {
 }
 
 void PlayGame() {
+	BCGame.Reset();
 	int MaxTries = BCGame.GetMaxTries();
-	std::cout << MaxTries << std::endl;
 
 	constexpr int GUESSES_REMAINING = 5;
 	for (int count = 1; count <= MaxTries; count++) {
@@ -50,8 +52,8 @@ std::string GetGuess() {
 	std::string Guess = "";
 	std::cout << "Try " << CurrentTry << ". Enter your guess: ";
 	std::getline(std::cin, Guess);
-
 	std::cout << "Your guess was: " << Guess << std::endl;
+
 
 	return Guess;
 }
