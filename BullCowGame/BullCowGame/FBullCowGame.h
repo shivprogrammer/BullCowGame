@@ -11,5 +11,5 @@ public:
 	
 private:
 	int MyCurrentTry;
-	int MyMaxTries;
+	int MyMaxTries = 5;
 };

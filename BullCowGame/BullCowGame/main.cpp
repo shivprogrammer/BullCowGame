@@ -24,9 +24,11 @@ int main() {
 
 void PlayGame() {
 	FBullCowGame BCGame;
+	int MaxTries = BCGame.GetMaxTries();
+	std::cout << MaxTries << std::endl;
 
 	constexpr int GUESSES_REMAINING = 5;
-	for (int count = GUESSES_REMAINING; count > 0; count--) {
+	for (int count = 1; count <= MaxTries; count++) {
 		GetGuess();
 		std::cout << std::endl;
 	}
