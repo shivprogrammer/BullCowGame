@@ -9,6 +9,8 @@ std::string GetGuess();
 void RelayGuess();
 bool AskToPlayAgain();
 
+FBullCowGame BCGame;
+
 // the entry point for our application
 int main() {
 	bool bPlayAgain = false;
@@ -23,7 +25,6 @@ int main() {
 }
 
 void PlayGame() {
-	FBullCowGame BCGame;
 	int MaxTries = BCGame.GetMaxTries();
 	std::cout << MaxTries << std::endl;
 
@@ -46,9 +47,13 @@ void PrintIntro() {
 
 std::string GetGuess() {
 	// get guess from player
+	int CurrentTry = BCGame.GetCurrentTry();
+	std::cout << CurrentTry << std::endl;
+
 	std::cout << "Enter your guess: ";
 	std::getline(std::cin, Guess);
 	RelayGuess();
+
 	return Guess;
 }
 

@@ -8,7 +8,7 @@ int FBullCowGame::GetMaxTries() {
 }
 
 int FBullCowGame::GetCurrentTry() {
-	return 0;
+	return MyCurrentTry;
 }
 
 bool FBullCowGame::IsGameWon() {
