@@ -11,7 +11,6 @@ FBullCowGame BCGame; // instantiating a new game
 
 // the entry point for our application
 int main() {
-	std::cout << BCGame.GetCurrentTry();
 
 	bool bPlayAgain = false;
 	do {
@@ -24,17 +23,6 @@ int main() {
 	return 0;
 }
 
-void PlayGame() {
-	BCGame.Reset();
-	int MaxTries = BCGame.GetMaxTries();
-
-	constexpr int GUESSES_REMAINING = 5;
-	for (int count = 1; count <= MaxTries; count++) {
-		GetGuess();
-		std::cout << std::endl;
-	}
-}
-
 // introduce the game
 void PrintIntro() {
 	constexpr int WORD_LENGTH = 5;
@@ -43,6 +31,23 @@ void PrintIntro() {
 	std::cout << " letter isogram I'm thinking of?\n";
 	std::cout << std::endl;
 	return;
+}
+
+void PlayGame() {
+	BCGame.Reset();
+	int MaxTries = BCGame.GetMaxTries();
+
+	//TODO change from FOR to WHILE loop
+	for (int count = 1; count <= MaxTries; count++) {
+		GetGuess(); // TODO make loop checking valid
+
+		// submit valid guess to the game
+		// print number of bulls and cows
+
+		std::cout << std::endl;
+	}
+
+	// TODO add a game summary
 }
 
 std::string GetGuess() {
