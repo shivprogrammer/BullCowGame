@@ -22,3 +22,14 @@ bool FBullCowGame::IsGameWon() const {
 bool FBullCowGame::CheckGuessValidity(FString) {
 	return false;
 }
+
+// receives a VALID guess, increments turn, return count
+BullCowCount FBullCowGame::SubmitGuess(FString)
+{
+	// increment turn number
+	// setup return variable
+	// loop through all letters in guess
+		// compare letters against secret word
+
+	return BullCowCount();
+}
