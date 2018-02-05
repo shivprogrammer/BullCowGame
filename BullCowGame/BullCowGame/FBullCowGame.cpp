@@ -1,6 +1,8 @@
 #include "FBullCowGame.h"
+#include <string>
 
 using int32 = int;
+using FSTring = std::string;
 
 FBullCowGame::FBullCowGame() { Reset(); }
 
@@ -23,7 +25,10 @@ bool FBullCowGame::IsGameWon() const {
 }
 
 EWordStatus FBullCowGame::CheckGuessValidity(FString) const {
-	return EWordStatus::OK;
+	// if the guess isn't an isogram
+		// return an error
+	// if the guess isn't all lowercase
+		// return error
 }
 
 // receives a VALID guess, increments turn, return count
