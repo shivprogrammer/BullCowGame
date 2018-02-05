@@ -55,7 +55,15 @@ void PlayGame() {
 		std::cout << ". Cows = " << BullCowCount.Cows << "\n\n";
 	}
 
+	if (BCGame.IsGameWon()) {
+		std::cout << "CONGRATULATIONS, YOU WON!\n";
+	}
+	else {
+		std::cout << "Sorry, better luck next time\n";
+	}
+
 	// TODO add a game summary
+	return;
 }
 
 // loop continually until user gives valid guess
