@@ -9,6 +9,13 @@ struct FBullCowCount {
 	int32 Cows = 0;
 };
 
+enum class EWordStatus {
+	OK,
+	Not_Isogram,
+	Wrong_Length,
+	Not_Lowercase
+};
+
 class FBullCowGame {
 public:
 	FBullCowGame(); // constructor
