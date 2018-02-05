@@ -60,26 +60,30 @@ void PlayGame() {
 
 // loop continually until user gives valid guess
 FText GetValidGuess() {
-	// get guess from player
-	int32 CurrentTry = BCGame.GetCurrentTry();
-	std::cout << "Try " << CurrentTry << ". Enter your guess: ";
-	FText Guess = "";
-	std::getline(std::cin, Guess);
+	EGuessStatus Status = EGuessStatus::Invalid_Status;
+	do {
+		// get guess from player
+		int32 CurrentTry = BCGame.GetCurrentTry();
+		std::cout << "Try " << CurrentTry << ". Enter your guess: ";
+		FText Guess = "";
+		std::getline(std::cin, Guess);
 
-	EGuessStatus Status = BCGame.CheckGuessValidity(Guess);
-	switch (Status) {
-	case EGuessStatus::Wrong_Length:
-		std::cout << "Please enter a " << BCGame.GetHiddenWordLength() << " letter word.\n";
-		break;
-	case EGuessStatus::Not_Lowercase:
-		std::cout << "Please enter input with all lower case words";
-		break;
-	case EGuessStatus::Not_Isogram:
-		std::cout << "Please enter a word with all unique letters";
-		break;
-	default:
-		return Guess;
-	}
+		Status = BCGame.CheckGuessValidity(Guess);
+		switch (Status) {
+		case EGuessStatus::Wrong_Length:
+			std::cout << "Please enter a " << BCGame.GetHiddenWordLength() << " letter word.\n";
+			break;
+		case EGuessStatus::Not_Isogram:
+			std::cout << "Please enter a word with all unique letters\n";
+			break;
+		case EGuessStatus::Not_Lowercase:
+			std::cout << "Please enter input with all lower case words\n";
+			break;
+		default:
+			return Guess;
+		}
+		std::cout << std::endl;
+	} while (Status != EGuessStatus::OK);
 }
 
 bool AskToPlayAgain() {
