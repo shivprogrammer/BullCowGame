@@ -40,7 +40,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const {
 }
 
 // receives a VALID guess, increments turn, return count
-FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
+FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 {
 	// increment turn number
 	MyCurrentTry++;
