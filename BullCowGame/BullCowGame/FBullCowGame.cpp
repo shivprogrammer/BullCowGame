@@ -4,19 +4,21 @@
 
 using int32 = int;
 
-FBullCowGame::FBullCowGame() { Reset(); }
+FBullCowGame::FBullCowGame() { Reset(); } // default constructor
 
-int32 FBullCowGame::GetMaxTries() const { return MyMaxTries; }
 int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry; }
 int32 FBullCowGame::GetHiddenWordLength() const { return MyHiddenWord.length(); }
 bool FBullCowGame::IsGameWon() const { return bGameIsWon; }
 
-void FBullCowGame::Reset() {
-	constexpr int32 MAX_TRIES = 8;
-	const FString HIDDEN_WORD = "planet";
+int32 FBullCowGame::GetMaxTries() const { 
+	TMap<int32, int32> WordLengthToMaxTries{ {3,5}, {4,5}, {5,5}, {6,5} };
+	return WordLengthToMaxTries[MyHiddenWord.length()];
+}
 
-	MyMaxTries = MAX_TRIES;
+void FBullCowGame::Reset() {
+	const FString HIDDEN_WORD = "planet";
 	MyHiddenWord = HIDDEN_WORD;
+
 	MyCurrentTry = 1;
 	bGameIsWon = false;
 	return;
