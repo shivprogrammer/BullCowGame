@@ -3,11 +3,13 @@ This is the console executable that makes use of the BullCow class
 This acts as the view in a MCV pattern, and is responsible
 for all user interaction. For game logic see the FBullCowGame class.
 */
+#pragma once
 
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
 
+// to make syntax Unreal friendly
 using FText = std::string;
 using int32 = int;
 
@@ -17,7 +19,7 @@ FText GetValidGuess();
 bool AskToPlayAgain();
 void PrintGameSummary();
 
-FBullCowGame BCGame; // instantiating a new game
+FBullCowGame BCGame; // instantiating a new game, re-used across plays
 
 // the entry point for our application
 int main() {
@@ -30,10 +32,9 @@ int main() {
 	}
 	while (bPlayAgain);
 
-	return 0;
+	return 0; // exit the application
 }
 
-// introduce the game
 void PrintIntro() {
 	std::cout << "\n\nWelcome to Bulls and Cows, a fun word game.\n";
 	std::cout << "Can you guess the " << BCGame.GetHiddenWordLength();
@@ -42,6 +43,7 @@ void PrintIntro() {
 	return;
 }
 
+// plays a single game instance to completion
 void PlayGame() {
 	BCGame.Reset();
 	int32 MaxTries = BCGame.GetMaxTries();
