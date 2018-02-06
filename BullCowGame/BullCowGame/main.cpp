@@ -79,7 +79,7 @@ FText GetValidGuess() {
 			std::cout << "Please enter a word with all unique letters\n";
 			break;
 		case EGuessStatus::Not_Lowercase:
-			std::cout << "Please enter input with all lower case words\n";
+			std::cout << "Please enter input with all lower case characters\n";
 			break;
 		default:
 			break;
